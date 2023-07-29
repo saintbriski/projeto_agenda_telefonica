@@ -34,7 +34,9 @@ formInputs.forEach(input => {
 inputTelFormulario.addEventListener('blur', function() {
     const numeroTelefone = inputTelFormulario.value.replace(/\D/g, '');
     const numeroDeTelefoneFormatado = formataNumeroTelefone(numeroTelefone);
-    inputTelFormulario.value = numeroDeTelefoneFormatado; 
+    if (numeroDeTelefoneFormatado.length >= 14) {
+        inputTelFormulario.value = numeroDeTelefoneFormatado; 
+    }
 });
 
 inputNomeFormulario.addEventListener('input', function () {
